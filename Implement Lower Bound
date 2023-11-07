@@ -1,0 +1,22 @@
+ public class Solution {
+    public static int lowerBound(int []arr, int n, int x) {
+        
+        int left =0,right =n-1,ans=n;
+
+        while(left<=right){
+            int mid = (left+right)/2;
+         //may be an answer
+            if(arr[mid]>=x){
+                ans= mid;
+                //looking left side
+                right = mid-1;
+            }
+            else{
+                left = mid+1;
+            }
+        }
+        return ans;
+  
+
+}
+ }
